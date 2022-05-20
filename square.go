@@ -9,10 +9,10 @@ type Square struct {
 	a     uint
 }
 
-func (s Square) End() Point {
+func (s *Square) End() Point {
 	return Point{
-		x: 1,
-		y: 1,
+		x: s.start.x + int(s.a),
+		y: s.start.y + int(s.a),
 	}
 }
 
@@ -21,5 +21,5 @@ func (s *Square) Area() uint {
 }
 
 func (s *Square) Perimeter() uint {
-	return s.a * 2
+	return s.a * 4
 }
